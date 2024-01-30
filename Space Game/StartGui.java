@@ -1,4 +1,3 @@
-
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,7 +17,7 @@ public class StartGui extends JFrame {
 	private JMenuItem fileMenuItem, fileMenuItem2, fileMenuItem3, fileMenuItem4, helpMenuItem;
 	private ImageIcon startBackGround;
 	private JLabel startLabel;
-	private static String filePath = System.getProperty("user.home") + "/Desktop/users.txt";
+	public static String filePath = System.getProperty("user.home") + ("/Desktop");
 	
 	public StartGui() {
 		this.setTitle("CSE 212 Term Project - Space Invaders Game");
@@ -71,9 +70,9 @@ public class StartGui extends JFrame {
 	private void registerUser() {
 	    String username = JOptionPane.showInputDialog("Enter username:");
 	    String password = JOptionPane.showInputDialog("Enter password:");
-	
+		
 	    try {
-	        FileWriter writer = new FileWriter(filePath, true);
+			FileWriter writer = new FileWriter(filePath, true);
 	        writer.write(username + "," + password + ",0\n"); 
 	        writer.close();
 	        JOptionPane.showMessageDialog(null, "Registration successful!");
